@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+*.pyc
+
+# Virtual environment
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*~
+*.bak
+*.pyo
+*.orig
+
+# Database
+*.sqlite3
+
+# Static files (usually served by web server)
+/staticfiles/
+
+# Media files
+/media/
+
+# Django local settings
+local_settings.py
+
+# Logs
+log/
+logs/
+*.log
+
+# Ignore the pipenv or poetry virtual environment
+Pipfile
+Pipfile.lock
+pyproject.toml
+
+# Ignore secret keys
+*.secret
+
+# Ignore compiled python files
+__pycache__/
+*.pyc
+
+# Ignore generated files by django collectstatic
+staticfiles/
