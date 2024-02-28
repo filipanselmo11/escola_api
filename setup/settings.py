@@ -124,14 +124,27 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#versionamento
+
 REST_FRAMEWORK = {
+    #versionamento
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
+    #Permissões
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.DjangoModelPermissions'
     ],
+    #Autenticação Básica
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
-    ]
+    ],
+    #Limitando Requisições para usuário anonimo e logado
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    #Quantidade de Requisições
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '50/day',
+        'user': '50/day'
+    }
 }
